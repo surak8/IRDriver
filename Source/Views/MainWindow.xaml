@@ -1,0 +1,69 @@
+<Window 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:local="clr-namespace:NSIRDriver"
+	x:Name="window1"
+	x:Class="NSIRDriver.MainWindow"
+	Title="MainWindow"
+	Width="{Binding windowWidth}"
+	Height="{Binding windowHeight}"
+	Left="{Binding windowLeft}"
+	Top="{Binding windowTop}"
+	SizeChanged="Window1_SizeChanged"
+	LocationChanged="Window1_LocationChanged"
+	Initialized="Window1_Initialized"
+
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	>
+	<!--<StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">-->
+		<Grid HorizontalAlignment="Center" VerticalAlignment="center">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="5*"/>
+				<RowDefinition Height="20*"/>
+				<RowDefinition Height="50*"/>
+				<RowDefinition Height="20*"/>
+				<RowDefinition Height="5*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="5*"/>
+				<ColumnDefinition Width="5*"/>
+				<ColumnDefinition Width="50*"/>
+				<ColumnDefinition Width="5*"/>
+				<ColumnDefinition Width="5*"/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Row="2" Grid.Column="2"
+				  HorizontalAlignment="Stretch"
+				  VerticalAlignment="Stretch"
+				  >
+				<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Button 
+					Name="btnConnect" 
+					Click="doConnect" 
+					Grid.Row="0" 
+					Grid.Column="0"
+					Content="Connect" Height="22" VerticalAlignment="Top"
+					IsEnabled="{Binding canConnect}"
+					/>
+			<Button 
+					Name="btnDisconnect" 
+					Click="doDisconnect" 
+					Grid.Row="1" 
+					Grid.Column="0"
+					Content="Disconnect"
+					IsEnabled="{Binding canDisconnect}"
+					/>
+		</Grid>
+		</Grid>
+
+
+	<!--</StackPanel>-->
+</Window>
